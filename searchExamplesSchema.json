@@ -1,0 +1,87 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string"
+            },
+            "description": {
+                "type": "string"
+            },
+            "syntax": {
+                "type": "string"
+            },
+            "exampleLink": {
+                "type": "string"
+            },
+            "tags": {
+                "type": "array",
+                "items": {
+                    "type": "string",
+                    "enum": [
+                        "framework:oauth2",
+                        "framework:react",
+                        "language:assembly",
+                        "language:bash",
+                        "language:c",
+                        "language:cpp",
+                        "language:csharp",
+                        "language:css",
+                        "language:dart",
+                        "language:elixir",
+                        "language:erlang",
+                        "language:go",
+                        "language:graphql",
+                        "language:groovy",
+                        "language:haskell",
+                        "language:html",
+                        "language:java",
+                        "language:javascript",
+                        "language:kotlin",
+                        "language:json",
+                        "language:julia",
+                        "language:lua",
+                        "language:markdown",
+                        "language:objective-c",
+                        "language:ocaml",
+                        "language:php",
+                        "language:powershell",
+                        "language:python",
+                        "language:r",
+                        "language:ruby",
+                        "language:rust",
+                        "language:sass",
+                        "language:scala",
+                        "language:sql",
+                        "language:swift",
+                        "language:terraform",
+                        "language:typescript",
+                        "language:vba",
+                        "language:xml",
+                        "language:yaml",
+                        "language:zig",
+                        "pattern_type:literal",
+                        "pattern_type:regexp",
+                        "pattern_type:structural",
+                        "platform:docker",
+                        "platform:kubernetes",
+                        "use_case:code_health",
+                        "use_case:code_intelligence",
+                        "use_case:code_reuse",
+                        "use_case:devops",
+                        "use_case:security"
+                    ]
+                }
+            }
+        },
+        "required": [
+            "name",
+            "description",
+            "syntax",
+            "exampleLink",
+            "tags"
+        ]
+    }
+}
