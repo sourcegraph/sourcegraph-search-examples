@@ -26,7 +26,7 @@
   - language:typescript
   - pattern_type:literal
 - name: React prop usage
-  description: Using precise code intelligence, find other locations in code where a specific React prop is being used and referenced.
+  description: Using the "Find references" feature, find other locations in code where a specific React prop is being used and referenced.
   syntax: repo:^github\.com/sourcegraph/sourcegraph$@b12df6d file:^client/web/src/SourcegraphWebApp\.tsx
   exampleLink: https://sourcegraph.com/github.com/sourcegraph/sourcegraph@b12df6d95ca30bfd1699f32e51dc83826201fa3b/-/blob/client/web/src/SourcegraphWebApp.tsx?L377:37-377:57#tab=references
   tags:

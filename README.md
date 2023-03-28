@@ -1,6 +1,10 @@
 # Sourcegraph Search Examples
 
-This repository contains a static component library for embedding Sourcegraph search examples on a web page. The search example components can be filtered by relevant tags such as language, framework, and persona. There is no external data store - new examples can be added by contributing to the YAML data source file.
+[View on Github Pages](https://sourcegraph.github.io/sourcegraph-search-examples)
+
+This repository contains a single-page app that showcases a variety of search examples that anyone can see on [sourcegraph.com](https://sourcegraph.com/search). The examples can be filtered by relevant tags such as language, framework, pattern type, use case, etc. 
+
+There is no external data store - new examples are added by contributing to the YAML data source file.
 
 ## Adding Examples
 
@@ -28,7 +32,7 @@ npm run dev
 npm run build
 ```
 
-Or, rebuild just the `examples.json` file after changing `searchExamples.yaml`:
+Or, if you're running the dev server and adding/changing examples, rebuild just the `examples.json` file after changing `searchExamples.yaml`:
 
 ```bash
 npm run build-examples
@@ -36,4 +40,6 @@ npm run build-examples
 
 You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Deploying
+
+As a Github pages site, the production deployment serves the assets in the `/docs/` folder of the `main` branch of this repo. The build is configured to rewrite the `/docs/` folder. If a new build is committed and merged to the `main` branch, but the github pages site is not updating, it is likely due to a caching issue with Github pages.
