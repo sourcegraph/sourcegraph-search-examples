@@ -74,6 +74,11 @@ const filters = [
         tag: "platform:docker",
     },
     {
+        name: "Github",
+        category: categories.PLATFORM,
+        tag: "platform:github",
+    },
+    {
         name: "Kubernetes",
         category: categories.PLATFORM,
         tag: "platform:kubernetes"

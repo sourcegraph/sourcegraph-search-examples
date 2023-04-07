@@ -66,6 +66,7 @@
                         "pattern_type:regexp",
                         "pattern_type:structural",
                         "platform:docker",
+                        "platform:github",
                         "platform:kubernetes",
                         "use_case:code_health",
                         "use_case:code_intelligence",

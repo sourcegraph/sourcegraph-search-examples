@@ -94,3 +94,23 @@
   - use_case:devops
   - language:yaml
   - platform:kubernetes
+- name: Find usage of deprecated Github actions/checkout@v2
+  description: Look in existing workflows for use of the deprecated v2 checkout action, which uses an EOL version of NodeJS.
+  syntax: path:\.github/workflows lang:yaml actions/checkout@v2
+  exampleLink: https://sourcegraph.com/search?q=context:global+path:%5C.github/workflows+lang:yaml+actions/checkout%40v2&patternType=standard&sm=1&groupBy=repo
+  tags:
+  - pattern_type:literal
+  - use_case:devops
+  - use_case:code_health
+  - language:yaml
+  - platform:github
+- name: Find where caching can be used to speed up Github workflows
+  description: Find workflows where actions/checkout is used and a test command is run, but actions/cache is not used.
+  syntax: path:\.github/workflows lang:yaml uses:\sactions\/checkout AND \stest\s NOT actions/cache
+  exampleLink: https://sourcegraph.com/search?q=context:global+path:%5C.github/workflows+lang:yaml+uses:%5Csactions%5C/checkout+AND+%5Cstest%5Cs+NOT+actions/cache&patternType=regexp&sm=1&groupBy=repo
+  tags:
+  - pattern_type:regexp
+  - use_case:devops
+  - use_case:devops
+  - language:yaml
+  - platform:github
