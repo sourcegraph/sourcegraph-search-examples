@@ -18,7 +18,7 @@
   - pattern_type:regexp
 - name: NPM coa vulnerability
   description: Search package.json files for versions other than the recommended stable 2.0.2 release. Other versions contain malicious code that installs ransomware and credential harvesters.
-  syntax: file:package\.json "coa" NOT 2.0.2
+  syntax: 'file:package\.json "coa" NOT 2.0.2'
   exampleLink: https://sourcegraph.com/search?q=context:global+file:package%5C.json+%22coa%22+NOT+2.0.2&patternType=standard&sm=1&groupBy=repo
   tags:
   - use_case:security
@@ -36,7 +36,7 @@
   - pattern_type:literal
 - name: OAuth2 configuration in Go
   description: View arguments passed to oauth2.Config() in order to add OAuth2 to a Go app.
-  syntax: lang:Go oauth2.Config{:[args]} patternType:structural
+  syntax: "lang:Go oauth2.Config{:[args]} patternType:structural"
   exampleLink: https://sourcegraph.com/search?q=context%3Aglobal+lang%3AGo+oauth2.Config%7B%3A%5Bargs%5D%7D&patternType=structural&sm=1&groupBy=repo
   tags:
   - use_case:code_reuse
@@ -45,7 +45,7 @@
   - pattern_type:structural
 - name: Standardizing error messages in Go
   description: A code smell for errors.New(fmt.Sprintf()) which should be replaced with fmt.Errorf()
-  syntax: errors.New(fmt.Sprintf(:[args])) lang:Go patternType:structural
+  syntax: "errors.New(fmt.Sprintf(:[args])) lang:Go patternType:structural"
   exampleLink: https://sourcegraph.com/search?q=context:global+errors.New%28fmt.Sprintf%28:%5Bargs%5D%29%29+lang:Go&patternType=structural&sm=1&groupBy=repo
   tags:
   - use_case:code_health
@@ -53,7 +53,7 @@
   - pattern_type:structural
 - name: Missing error catches in Java
   description: Use structural search to perform a code smell in Java; find errors that are not handled.
-  syntax: lang:Java try {:[_]} catch (:[e]) { } finally {:[_]} patternType:structural
+  syntax: "lang:Java try {:[_]} catch (:[e]) { } finally {:[_]} patternType:structural"
   exampleLink: https://sourcegraph.com/search?q=context%3Aglobal+lang%3AJava+try+%7B%3A%5B_%5D%7D+catch+%28%3A%5Be%5D%29+%7B+%7D+finally+%7B%3A%5B_%5D%7D&patternType=structural&sm=1&groupBy=repo
   tags:
   - language:java
@@ -61,7 +61,7 @@
   - pattern_type:structural
 - name: How to use React hooks
   description: See examples of how other developers are using hooks in React.
-  syntax: useState AND useRef (lang:javascript OR lang:TypeScript)
+  syntax: "useState AND useRef (lang:javascript OR lang:TypeScript)" 
   exampleLink: https://sourcegraph.com/search?q=context:global+useState+AND+useRef+%28lang:javascript+OR+lang:TypeScript%29&patternType=standard&sm=0&groupBy=repo
   tags:
   - language:javascript
@@ -70,7 +70,7 @@
   - use_case:code_reuse
 - name: NOT latest versions of Docker containers
   description: Search Dockerfiles for uses of the Alpine Linux container that isn't the latest version tag.
-  syntax: file:^Dockerfile$ alpine:(.+) -content:alpine:latest patternType:regexp
+  syntax: "file:^Dockerfile$ alpine:(.+) -content:alpine:latest patternType:regexp"
   exampleLink: https://sourcegraph.com/search?q=context:global+file:%5EDockerfile%24+alpine:%28.%2B%29+-content:alpine:latest&patternType=regexp&sm=0&groupBy=repo
   tags:
   - pattern_type:regexp
@@ -87,7 +87,7 @@
   - language:json
 - name: Kubernetes deployments without label matches
   description: Retrieves a list of YAML files that have elements of Kubernetes deployments, but which lack the matchLabels property of the selector.
-  syntax: select:file lang:YAML content:Deployment AND content:apps/v1 NOT content:matchLabels patternType:regexp 
+  syntax: "select:file lang:YAML content:Deployment AND content:apps/v1 NOT content:matchLabels patternType:regexp"
   exampleLink: https://sourcegraph.com/search?q=context:global+select:file+lang:YAML+content:Deployment+AND+content:apps/v1+NOT+content:matchLabels&patternType=regexp&sm=1&groupBy=repo
   tags:
   - pattern_type:regexp
@@ -111,6 +111,15 @@
   tags:
   - pattern_type:regexp
   - use_case:devops
-  - use_case:devops
+  - use_case:code_health
   - language:yaml
   - platform:github
+- name: How do people define k8s secrets in a YAML file?
+  description: Find examples of how people are using a secrets definition file in Kubernetes.
+  syntax: "context:global lang:YAML file:has.content(kind: Secret) ^data patterntype:regexp"
+  exampleLink: https://sourcegraph.com/search?q=context:global+lang:YAML+file:has.content%28kind:+Secret%29+%5Edata&patternType=regexp&sm=1&groupBy=repo
+  tags:
+  - pattern_type:regexp
+  - use_case:devops
+  - language:yaml
+  - platform:kubernetes
