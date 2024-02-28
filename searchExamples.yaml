@@ -123,3 +123,49 @@
   - use_case:devops
   - language:yaml
   - platform:kubernetes
+- name: Finding private keys
+  description: Use a regular expression to find private keys and/or Github access tokens checked in to code.
+  syntax: (-----BEGIN [A-Z ]*PRIVATE KEY------)|(("gh|'gh)[pousr]_[A-Za-z0-9_]{16,}) patternType:regexp case:yes
+  exampleLink: https://sourcegraph.com/search?q=context:global+%28-----BEGIN+%5BA-Z+%5D*PRIVATE+KEY------%29%7C%28%28%22gh%7C%27gh%29%5Bpousr%5D_%5BA-Za-z0-9_%5D%7B16%2C%7D%29&patternType=regexp&case=yes
+  tags:
+  - pattern_type:regexp
+  - use_case:security
+  - platform:github
+- name: Security-related changes to kubernetes
+  description: Use a regular expression to find all changes on all branches of the kubernetes repository in 2023 which contain certain security-related keywords.
+  syntax: type:diff repo:github\.com/kubernetes/kubernetes$@*refs/heads/* after:"January 1, 2023" before:"January 1, 2024" \b(auth[^o][^r]|security\b|cve|password|secure|unsafe|perms|permissions) patterntype:regexp
+  exampleLink: https://sourcegraph.com/search?q=context:global+type:diff+repo:github%5C.com/kubernetes/kubernetes%24%40*refs/heads/*+after:%22January+1%2C+2023%22+before:%22January+1%2C+2024%22+%5Cb%28auth%5B%5Eo%5D%5B%5Er%5D%7Csecurity%5Cb%7Ccve%7Cpassword%7Csecure%7Cunsafe%7Cperms%7Cpermissions%29&patternType=regexp&sm=0
+  tags:
+  - pattern_type:regexp
+  - use_case:security
+  - platform:kubernetes
+- name: Find hacks and TODOs in app code
+  description: Use a regular expression to find TODO comments and similar admitted tech debt in source code files.
+  syntax: -file:\.(json|md|txt)$ hack|todo|kludge|fixme patterntype:regexp
+  exampleLink: https://sourcegraph.com/search?q=-file:%5C.%28json%7Cmd%7Ctxt%29%24+hack%7Ctodo%7Ckludge%7Cfixme&patternType=regexp
+  tags:
+  - pattern_type:regexp
+  - use_case:code_health
+- name: Removal of TODOs in commit history
+  description: Look for evidence of eliminated tech debt in Q4 2023 by using a commit search for removal of TODO comments.
+  syntax: repo:^github\.com/sourcegraph/sourcegraph$ type:diff select:commit.diff.removed TODO after:"October 1, 2023" before:"January 1, 2024"
+  exampleLink: https://sourcegraph.com/search?q=context:global+repo:%5Egithub%5C.com/sourcegraph/sourcegraph%24+type:diff+TODO+select:commit.diff.removed+after:%22October+1%2C+2023%22+before:%22January+1%2C+2024%22+&patternType=standard&sm=0
+  tags:
+  - pattern_type:literal
+  - use_case:code_health
+- name: Find example code for testing HTTP requests
+  description: Use boolean operators to find tests of the HTTP library and NewRequest function in Go.
+  syntax: repo:github\.com/sourcegraph/sourcegraph$ (test AND http AND NewRequest) lang:go
+  exampleLink: https://sourcegraph.com/search?q=context:global+repo:github%5C.com/sourcegraph/sourcegraph%24+%28test+AND+http+AND+NewRequest%29+lang:go&patternType=keyword&sm=0
+  tags:
+  - language:go
+  - use_case:code_health
+  - use_case:code_reuse
+  - pattern_type:literal
+- name: Find stale repositories
+  description: Select repositories that do not have commits to the main branch in the past 6 months
+  syntax: select:repo -repo:has.commit.after("6 months ago")
+  exampleLink: https://sourcegraph.com/search?q=context:global+select:repo+-repo:has.commit.after%28%226+months+ago%22%29&patternType=keyword&sm=0
+  tags:
+  - pattern_type:literal
+  - use_case:code_health
