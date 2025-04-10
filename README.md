@@ -12,6 +12,23 @@ Add your example to `searchExamples.yaml` in the root folder. You *must* add val
 
 After adding your example to the YAML document, run `npm run build-examples`. This will validate your updates against the schema file (searchExamplesSchema.json). Assuming your updates are valid, the build-examples script writes a new app data file (static/examples.json) which will be used to populate the app.
 
+### Tests
+
+We have automated tests to ensure that all examples adhere to the schema and follow our guidelines. The tests verify:
+
+- All examples conform to the JSON schema defined in `searchExamplesSchema.json`
+- All example links are valid Sourcegraph URLs
+- Each example has at least one pattern type tag
+- Each example has at least one use case tag
+
+Run the tests locally with:
+
+```shell
+npm test
+```
+
+These tests also run automatically on GitHub Actions for all pull requests to ensure quality.
+
 ## Developing
 
 ### Install Dependencies
