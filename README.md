@@ -1,6 +1,6 @@
 # Sourcegraph Search Examples
 
-[View on Github Pages](https://sourcegraph.github.io/sourcegraph-search-examples)
+[View on GitHub Pages](https://sourcegraph.github.io/sourcegraph-search-examples)
 
 This repository contains a single-page app that showcases a variety of search examples that anyone can see on [sourcegraph.com](https://sourcegraph.com/search). The examples can be filtered by relevant tags such as language, framework, pattern type, use case, etc. 
 
@@ -59,4 +59,4 @@ You can preview the production build with `npm run preview`.
 
 ## Deploying
 
-As a Github pages site, the production deployment serves the assets in the `/docs/` folder of the `main` branch of this repo. The build is configured to rewrite the `/docs/` folder. If a new build is committed and merged to the `main` branch, but the github pages site is not updating, it is likely due to a caching issue with Github pages.
+As a GitHub pages site, the production deployment serves the assets in the `/docs/` folder of the `main` branch of this repo. The build is configured to rewrite the `/docs/` folder. If a new build is committed and merged to the `main` branch, but the github pages site is not updating, it is likely due to a caching issue with GitHub pages.
