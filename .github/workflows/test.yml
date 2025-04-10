@@ -8,6 +8,7 @@ on:
 
 jobs:
   test:
+    name: Validate search examples
     runs-on: ubuntu-latest
 
     steps:
