@@ -4,43 +4,199 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="./favicon.png" />
 		<meta name="viewport" content="width=device-width" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+		<title>Sourcegraph Search Examples</title>
+		<meta name="description" content="A collection of example search queries for Sourcegraph, filterable by language, pattern type, and use case.">
 		<meta http-equiv="content-security-policy" content="">
-		<link href="./_app/immutable/assets/_layout.67312ba5.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.b8229b59.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.d3eba4ba.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.6735aeed.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.53507281.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/_layout.svelte.1c392bd0.js">
+		<link href="./_app/immutable/assets/_layout.d89a51c4.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.2d433e10.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.4e1e2507.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.8fdfe2a6.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.88f85147.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/_layout.svelte.17246e2b.js">
 		<link rel="modulepreload" href="./_app/immutable/entry/_layout.js.984db11e.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/_layout.da46b06b.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/_page.svelte.d5c1f48e.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/_page.svelte.4dbd9750.js">
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">
 
 
-<div class="w-full"><h1 class="p-4 text-4xl text-center">Sourcegraph Search Examples</h1></div>
-<div class="w-full flex flex-row p-4"><div class="flex flex-col p-4 w-1/4"><h2 class="p-2 text-3xl">Filters</h2>
-        <button class="border-solid border-2 border-black rounded-full p-1 m-1 bg-slate-200">Clear All</button>
-<div class="flex flex-row flex-wrap w-full"><details class="bg-slate-100 m-2 p-4 flex flex-column rounded-xl open:bg-slate-200 duration-300 w-full"><summary class="text-base font-bold">Framework</summary>
-            <div class="flex flex-row flex-wrap"><button class="bg-slate-100 whitespace-nowrap border-solid border-2 border-black rounded-full p-1 m-1">OAuth2</button><button class="bg-slate-100 whitespace-nowrap border-solid border-2 border-black rounded-full p-1 m-1">React</button></div>
-        </details><details class="bg-slate-100 m-2 p-4 flex flex-column rounded-xl open:bg-slate-200 duration-300 w-full"><summary class="text-base font-bold">Language</summary>
-            <div class="flex flex-row flex-wrap"><button class="bg-slate-100 whitespace-nowrap border-solid border-2 border-black rounded-full p-1 m-1">Go</button><button class="bg-slate-100 whitespace-nowrap border-solid border-2 border-black rounded-full p-1 m-1">Java</button><button class="bg-slate-100 whitespace-nowrap border-solid border-2 border-black rounded-full p-1 m-1">JavaScript</button><button class="bg-slate-100 whitespace-nowrap border-solid border-2 border-black rounded-full p-1 m-1">JSON</button><button class="bg-slate-100 whitespace-nowrap border-solid border-2 border-black rounded-full p-1 m-1">Ruby</button><button class="bg-slate-100 whitespace-nowrap border-solid border-2 border-black rounded-full p-1 m-1">TypeScript</button><button class="bg-slate-100 whitespace-nowrap border-solid border-2 border-black rounded-full p-1 m-1">YAML</button></div>
-        </details><details class="bg-slate-100 m-2 p-4 flex flex-column rounded-xl open:bg-slate-200 duration-300 w-full"><summary class="text-base font-bold">Pattern Type</summary>
-            <div class="flex flex-row flex-wrap"><button class="bg-slate-100 whitespace-nowrap border-solid border-2 border-black rounded-full p-1 m-1">Literal</button><button class="bg-slate-100 whitespace-nowrap border-solid border-2 border-black rounded-full p-1 m-1">Regular Expression</button><button class="bg-slate-100 whitespace-nowrap border-solid border-2 border-black rounded-full p-1 m-1">Structural</button></div>
-        </details><details class="bg-slate-100 m-2 p-4 flex flex-column rounded-xl open:bg-slate-200 duration-300 w-full"><summary class="text-base font-bold">Platform</summary>
-            <div class="flex flex-row flex-wrap"><button class="bg-slate-100 whitespace-nowrap border-solid border-2 border-black rounded-full p-1 m-1">Docker</button><button class="bg-slate-100 whitespace-nowrap border-solid border-2 border-black rounded-full p-1 m-1">Github</button><button class="bg-slate-100 whitespace-nowrap border-solid border-2 border-black rounded-full p-1 m-1">Kubernetes</button></div>
-        </details><details class="bg-slate-100 m-2 p-4 flex flex-column rounded-xl open:bg-slate-200 duration-300 w-full"><summary class="text-base font-bold">Use Case</summary>
-            <div class="flex flex-row flex-wrap"><button class="bg-slate-100 whitespace-nowrap border-solid border-2 border-black rounded-full p-1 m-1">Code Health</button><button class="bg-slate-100 whitespace-nowrap border-solid border-2 border-black rounded-full p-1 m-1">Code Intelligence</button><button class="bg-slate-100 whitespace-nowrap border-solid border-2 border-black rounded-full p-1 m-1">Code Reuse</button><button class="bg-slate-100 whitespace-nowrap border-solid border-2 border-black rounded-full p-1 m-1">DevOps</button><button class="bg-slate-100 whitespace-nowrap border-solid border-2 border-black rounded-full p-1 m-1">Security</button></div>
-        </details></div></div>
-    <div class="flex flex-col p-4 w-3/4"><h2 class="p-2 text-3xl">Examples</h2>
-        <div class="flex flex-col p-2 w-full"></div></div></div>
+<div class="min-h-screen flex flex-col"><header class="sticky top-0 z-10 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm"><div class="container mx-auto px-4 py-3 flex justify-between items-center"><div class="flex items-center space-x-2"><svg class="w-8 h-8" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.5 8L5 18.5V22L15 27.5L5 33V40L22.5 30V22L32.5 16.5L22.5 11V8Z" fill="currentColor" class="text-primary"></path><path d="M25.5 40L43 29.5V26L33 20.5L43 15V8L25.5 18V26L15.5 31.5L25.5 37V40Z" fill="currentColor" class="text-secondary"></path></svg>
+                <span class="text-xl font-bold text-gray-900 dark:text-white">Sourcegraph Search Examples</span></div>
+            <div class="flex items-center space-x-4"><a href="https://sourcegraph.com/search" class="btn btn-secondary text-sm" target="_blank" rel="noopener noreferrer">Open Sourcegraph
+                </a>
+                <button class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg></button></div></div></header>
+
+    <main class="flex-1 container mx-auto px-4 py-6"><div class="pb-8"><div class="mb-8"><div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8"><div class="relative w-full md:max-w-md"><div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg></div>
+                <input type="text" placeholder="Search examples..." class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg py-2 pl-10 pr-4 block w-full focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" value=""></div>
+
+            <button class="md:hidden flex items-center justify-center space-x-2 btn btn-secondary"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                <span>Filters</span></button></div>
+
+        <div class="flex flex-col lg:flex-row gap-6">
+            <div class="lg:hidden overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0; opacity: 0"><div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 mb-4"><div class="flex justify-between items-center mb-4"><h2 class="text-xl font-semibold">Filters</h2>
+                        <button class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button></div>
+                    <div class="mb-4"><button class="btn btn-secondary w-full flex items-center justify-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        <span>Clear All Filters</span></button></div>
+
+<div class="space-y-3"><div class="card overflow-visible"><details id="category-Framework" class="group"><summary class="flex items-center justify-between px-4 py-3 cursor-pointer outline-none"><div class="flex items-center space-x-2"><h3 class="font-medium text-gray-900 dark:text-white m-0">Framework</h3>
+                        </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 group-open:rotate-180 transition-transform duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
+                <div class="px-4 py-3 border-t border-gray-200 dark:border-gray-700"><div class="flex justify-between mb-2"><button class="text-xs text-primary hover:text-primary-light">Select all
+                        </button>
+                        <button class="text-xs text-primary hover:text-primary-light">Clear
+                        </button></div>
+                    <div class="flex flex-wrap gap-2"><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">OAuth2
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">React
+                                </button></div>
+                </div></details>
+        </div><div class="card overflow-visible"><details id="category-Language" class="group"><summary class="flex items-center justify-between px-4 py-3 cursor-pointer outline-none"><div class="flex items-center space-x-2"><h3 class="font-medium text-gray-900 dark:text-white m-0">Language</h3>
+                        </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 group-open:rotate-180 transition-transform duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
+                <div class="px-4 py-3 border-t border-gray-200 dark:border-gray-700"><div class="flex justify-between mb-2"><button class="text-xs text-primary hover:text-primary-light">Select all
+                        </button>
+                        <button class="text-xs text-primary hover:text-primary-light">Clear
+                        </button></div>
+                    <div class="flex flex-wrap gap-2"><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Go
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Java
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">JavaScript
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">JSON
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Ruby
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">TypeScript
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">YAML
+                                </button></div>
+                </div></details>
+        </div><div class="card overflow-visible"><details id="category-Pattern Type" class="group"><summary class="flex items-center justify-between px-4 py-3 cursor-pointer outline-none"><div class="flex items-center space-x-2"><h3 class="font-medium text-gray-900 dark:text-white m-0">Pattern Type</h3>
+                        </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 group-open:rotate-180 transition-transform duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
+                <div class="px-4 py-3 border-t border-gray-200 dark:border-gray-700"><div class="flex justify-between mb-2"><button class="text-xs text-primary hover:text-primary-light">Select all
+                        </button>
+                        <button class="text-xs text-primary hover:text-primary-light">Clear
+                        </button></div>
+                    <div class="flex flex-wrap gap-2"><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Literal
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Regular Expression
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Structural
+                                </button></div>
+                </div></details>
+        </div><div class="card overflow-visible"><details id="category-Platform" class="group"><summary class="flex items-center justify-between px-4 py-3 cursor-pointer outline-none"><div class="flex items-center space-x-2"><h3 class="font-medium text-gray-900 dark:text-white m-0">Platform</h3>
+                        </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 group-open:rotate-180 transition-transform duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
+                <div class="px-4 py-3 border-t border-gray-200 dark:border-gray-700"><div class="flex justify-between mb-2"><button class="text-xs text-primary hover:text-primary-light">Select all
+                        </button>
+                        <button class="text-xs text-primary hover:text-primary-light">Clear
+                        </button></div>
+                    <div class="flex flex-wrap gap-2"><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Docker
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Github
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Kubernetes
+                                </button></div>
+                </div></details>
+        </div><div class="card overflow-visible"><details id="category-Use Case" class="group"><summary class="flex items-center justify-between px-4 py-3 cursor-pointer outline-none"><div class="flex items-center space-x-2"><h3 class="font-medium text-gray-900 dark:text-white m-0">Use Case</h3>
+                        </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 group-open:rotate-180 transition-transform duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
+                <div class="px-4 py-3 border-t border-gray-200 dark:border-gray-700"><div class="flex justify-between mb-2"><button class="text-xs text-primary hover:text-primary-light">Select all
+                        </button>
+                        <button class="text-xs text-primary hover:text-primary-light">Clear
+                        </button></div>
+                    <div class="flex flex-wrap gap-2"><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Code Health
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Code Intelligence
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Code Reuse
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">DevOps
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Security
+                                </button></div>
+                </div></details>
+        </div></div>
+
+</div></div>
+
+            
+            <div class="hidden lg:block w-full lg:w-1/4 sticky top-24 self-start"><div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4"><h2 class="text-xl font-semibold mb-4">Filters</h2>
+                    <div class="mb-4"><button class="btn btn-secondary w-full flex items-center justify-center space-x-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        <span>Clear All Filters</span></button></div>
+
+<div class="space-y-3"><div class="card overflow-visible"><details id="category-Framework" class="group"><summary class="flex items-center justify-between px-4 py-3 cursor-pointer outline-none"><div class="flex items-center space-x-2"><h3 class="font-medium text-gray-900 dark:text-white m-0">Framework</h3>
+                        </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 group-open:rotate-180 transition-transform duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
+                <div class="px-4 py-3 border-t border-gray-200 dark:border-gray-700"><div class="flex justify-between mb-2"><button class="text-xs text-primary hover:text-primary-light">Select all
+                        </button>
+                        <button class="text-xs text-primary hover:text-primary-light">Clear
+                        </button></div>
+                    <div class="flex flex-wrap gap-2"><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">OAuth2
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">React
+                                </button></div>
+                </div></details>
+        </div><div class="card overflow-visible"><details id="category-Language" class="group"><summary class="flex items-center justify-between px-4 py-3 cursor-pointer outline-none"><div class="flex items-center space-x-2"><h3 class="font-medium text-gray-900 dark:text-white m-0">Language</h3>
+                        </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 group-open:rotate-180 transition-transform duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
+                <div class="px-4 py-3 border-t border-gray-200 dark:border-gray-700"><div class="flex justify-between mb-2"><button class="text-xs text-primary hover:text-primary-light">Select all
+                        </button>
+                        <button class="text-xs text-primary hover:text-primary-light">Clear
+                        </button></div>
+                    <div class="flex flex-wrap gap-2"><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Go
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Java
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">JavaScript
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">JSON
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Ruby
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">TypeScript
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">YAML
+                                </button></div>
+                </div></details>
+        </div><div class="card overflow-visible"><details id="category-Pattern Type" class="group"><summary class="flex items-center justify-between px-4 py-3 cursor-pointer outline-none"><div class="flex items-center space-x-2"><h3 class="font-medium text-gray-900 dark:text-white m-0">Pattern Type</h3>
+                        </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 group-open:rotate-180 transition-transform duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
+                <div class="px-4 py-3 border-t border-gray-200 dark:border-gray-700"><div class="flex justify-between mb-2"><button class="text-xs text-primary hover:text-primary-light">Select all
+                        </button>
+                        <button class="text-xs text-primary hover:text-primary-light">Clear
+                        </button></div>
+                    <div class="flex flex-wrap gap-2"><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Literal
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Regular Expression
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Structural
+                                </button></div>
+                </div></details>
+        </div><div class="card overflow-visible"><details id="category-Platform" class="group"><summary class="flex items-center justify-between px-4 py-3 cursor-pointer outline-none"><div class="flex items-center space-x-2"><h3 class="font-medium text-gray-900 dark:text-white m-0">Platform</h3>
+                        </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 group-open:rotate-180 transition-transform duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
+                <div class="px-4 py-3 border-t border-gray-200 dark:border-gray-700"><div class="flex justify-between mb-2"><button class="text-xs text-primary hover:text-primary-light">Select all
+                        </button>
+                        <button class="text-xs text-primary hover:text-primary-light">Clear
+                        </button></div>
+                    <div class="flex flex-wrap gap-2"><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Docker
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Github
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Kubernetes
+                                </button></div>
+                </div></details>
+        </div><div class="card overflow-visible"><details id="category-Use Case" class="group"><summary class="flex items-center justify-between px-4 py-3 cursor-pointer outline-none"><div class="flex items-center space-x-2"><h3 class="font-medium text-gray-900 dark:text-white m-0">Use Case</h3>
+                        </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 group-open:rotate-180 transition-transform duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary>
+                <div class="px-4 py-3 border-t border-gray-200 dark:border-gray-700"><div class="flex justify-between mb-2"><button class="text-xs text-primary hover:text-primary-light">Select all
+                        </button>
+                        <button class="text-xs text-primary hover:text-primary-light">Clear
+                        </button></div>
+                    <div class="flex flex-wrap gap-2"><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Code Health
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Code Intelligence
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Code Reuse
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">DevOps
+                                </button><button type="button" class="tag  hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">Security
+                                </button></div>
+                </div></details>
+        </div></div>
+
+</div></div>
+
+            
+            <div class="w-full lg:w-3/4"><div class="flex justify-center items-center h-64"><div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div></div></div></div></div></div></main>
+
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-6"><div class="container mx-auto px-4 text-center text-sm text-gray-600 dark:text-gray-400"><p>Find more examples in the <a href="https://sourcegraph.com/docs/code-search/queries" target="_blank" rel="noopener noreferrer" class="font-medium">Sourcegraph documentation</a></p>
+            <p class="mt-2">© 2025 Sourcegraph</p></div></footer></div>
 
 
 			
 			<script>
 				{
-					__sveltekit_1sbhkqc = {
+					__sveltekit_120dff6 = {
 						env: {},
 						base: new URL(".", location).pathname.slice(0, -1),
 						element: document.currentScript.parentElement
@@ -49,10 +205,10 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.b8229b59.js"),
-						import("./_app/immutable/entry/app.53507281.js")
+						import("./_app/immutable/entry/start.2d433e10.js"),
+						import("./_app/immutable/entry/app.88f85147.js")
 					]).then(([kit, app]) => {
-						kit.start(app, __sveltekit_1sbhkqc.element, {
+						kit.start(app, __sveltekit_120dff6.element, {
 							node_ids: [0, 2],
 							data,
 							form: null,

@@ -1,3 +1,69 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary: #a112ff;
+  --primary-light: #c985ff;
+  --secondary: #00b4f2;
+  --dark: #1d1b26;
+  --light: #f9f9fb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-800: #1f2937;
+}
+
+@layer base {
+  body {
+    @apply bg-light text-dark transition-colors duration-200 ease-in-out;
+  }
+  
+  body.dark {
+    @apply bg-dark text-light;
+  }
+
+  h1 {
+    @apply text-4xl font-bold mb-4;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold mb-3;
+  }
+
+  h3 {
+    @apply text-xl font-medium mb-2;
+  }
+
+  a {
+    @apply text-secondary hover:text-primary transition-colors duration-200;
+  }
+}
+
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-200 border border-gray-200 dark:border-gray-700 hover:shadow-lg;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 ease-in-out;
+}
+
+.btn-primary {
+  @apply bg-primary text-white hover:bg-primary-light;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600;
+}
+
+.tag {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200;
+}
+
+.tag-primary {
+  @apply bg-primary bg-opacity-10 text-primary dark:bg-primary dark:bg-opacity-20;
+}
+
+.code-block {
+  @apply bg-gray-100 dark:bg-gray-800 rounded-lg p-3 font-mono text-sm overflow-x-auto border border-gray-200 dark:border-gray-700;
+}
