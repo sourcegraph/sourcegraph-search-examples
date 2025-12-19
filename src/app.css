@@ -5,9 +5,12 @@
 :root {
   --primary: #F34E3F;
   --primary-light: #FF7867;
+  --primary-hover: #D93E2F;
   --secondary: #FF7867;
   --dark: #060000;
+  --dark-text: #ffffff;
   --light: #f9f9fb;
+  --light-text: #1d1b26;
   --gray-100: #f3f4f6;
   --gray-200: #e5e7eb;
   --gray-300: #d1d5db;
@@ -23,11 +26,11 @@
 
 @layer base {
   body {
-    @apply bg-light text-dark transition-colors duration-200 ease-in-out;
+    @apply bg-light text-light-text transition-colors duration-200 ease-in-out;
   }
   
   body.dark {
-    @apply bg-dark text-light;
+    @apply bg-dark text-dark-text transition-colors duration-200 ease-in-out;
   }
 
   h1 {
@@ -56,11 +59,20 @@
 }
 
 .btn-primary {
-  @apply bg-primary text-white hover:bg-primary-light;
+  @apply bg-primary text-white;
+}
+
+.btn-primary:hover {
+  @apply text-white;
+  background-color: var(--primary-hover);
 }
 
 .btn-secondary {
-  @apply bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600;
+  @apply bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600;
+}
+
+.btn-secondary:hover {
+  @apply text-gray-900 dark:text-white;
 }
 
 .tag {
