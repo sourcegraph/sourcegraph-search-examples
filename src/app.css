@@ -3,15 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --primary: #a112ff;
-  --primary-light: #c985ff;
-  --secondary: #00b4f2;
-  --dark: #1d1b26;
+  --primary: #F34E3F;
+  --primary-light: #FF7867;
+  --secondary: #FF7867;
+  --dark: #060000;
   --light: #f9f9fb;
   --gray-100: #f3f4f6;
   --gray-200: #e5e7eb;
   --gray-300: #d1d5db;
   --gray-800: #1f2937;
+  /* Vermilion color variants */
+  --vermilion-00: #060000;
+  --vermilion-01: #200302;
+  --vermilion-02: #410604;
+  --vermilion-07: #F34E3F;
+  --vermilion-08: #FF7867;
+  --vermilion-11: #FFF3F0;
 }
 
 @layer base {
