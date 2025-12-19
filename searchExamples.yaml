@@ -94,7 +94,7 @@
   - use_case:devops
   - language:yaml
   - platform:kubernetes
-- name: Find usage of deprecated Github actions/checkout@v2
+- name: Find usage of deprecated GitHub actions/checkout@v2
   description: Look in existing workflows for use of the deprecated v2 checkout action, which uses an EOL version of NodeJS.
   syntax: path:\.github/workflows lang:yaml actions/checkout@v2
   exampleLink: https://sourcegraph.com/search?q=context:global+path:%5C.github/workflows+lang:yaml+actions/checkout%40v2&patternType=standard&sm=1&groupBy=repo
@@ -104,7 +104,7 @@
   - use_case:code_health
   - language:yaml
   - platform:github
-- name: Find where caching can be used to speed up Github workflows
+- name: Find where caching can be used to speed up GitHub workflows
   description: Find workflows where actions/checkout is used and a test command is run, but actions/cache is not used.
   syntax: path:\.github/workflows lang:yaml uses:\sactions\/checkout AND \stest\s NOT actions/cache
   exampleLink: https://sourcegraph.com/search?q=context:global+path:%5C.github/workflows+lang:yaml+uses:%5Csactions%5C/checkout+AND+%5Cstest%5Cs+NOT+actions/cache&patternType=regexp&sm=1&groupBy=repo
@@ -124,7 +124,7 @@
   - language:yaml
   - platform:kubernetes
 - name: Finding private keys
-  description: Use a regular expression to find private keys and/or Github access tokens checked in to code.
+  description: Use a regular expression to find private keys and/or GitHub access tokens checked in to code.
   syntax: (-----BEGIN [A-Z ]*PRIVATE KEY------)|(("gh|'gh)[pousr]_[A-Za-z0-9_]{16,}) patternType:regexp case:yes
   exampleLink: https://sourcegraph.com/search?q=context:global+%28-----BEGIN+%5BA-Z+%5D*PRIVATE+KEY------%29%7C%28%28%22gh%7C%27gh%29%5Bpousr%5D_%5BA-Za-z0-9_%5D%7B16%2C%7D%29&patternType=regexp&case=yes
   tags:
