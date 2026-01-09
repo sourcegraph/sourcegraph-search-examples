@@ -86,3 +86,25 @@
 .code-block {
   @apply bg-gray-100 dark:bg-gray-800 rounded-lg p-3 font-mono text-sm overflow-x-auto border border-gray-200 dark:border-gray-700;
 }
+
+/* Vermilion Syntax Highlighting Theme */
+.syntax-filter {
+  color: #00a0c8;
+}
+
+.syntax-value {
+  color: #FF7867;
+}
+
+.syntax-string {
+  color: #99C794;
+}
+
+.syntax-regex {
+  color: #a96af3;
+}
+
+.syntax-operator {
+  color: #FF7867;
+  font-weight: 500;
+}
