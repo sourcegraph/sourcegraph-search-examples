@@ -32,6 +32,68 @@
         return categories;
     }
 
+    // Sourcegraph search query syntax highlighter (Vermilion theme)
+    function highlightQuery(query) {
+        // Escape HTML special characters
+        const escapeHtml = (str) => str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+
+        // Known Sourcegraph filter prefixes (negated filters first for proper matching)
+        const filters = [
+            '-file', '-repo', '-lang', '-content', '-repohasfile',
+            'context', 'file', 'repo', 'lang', 'patternType', 'select', 'type',
+            'case', 'count', 'timeout', 'fork', 'archived', 'visibility',
+            'content', 'message', 'author', 'after', 'before', 'committer',
+            'revision', 'rev', 'symbol', 'repohasfile', 'repohascommitafter'
+        ];
+
+        let output = '';
+        let lastIndex = 0;
+
+        // Build pattern: filters with values, or standalone quoted strings
+        const filterKeywords = filters.map(f => f.replace(/-/g, '\\-')).join('|');
+        const tokenPattern = new RegExp(
+            '(' + filterKeywords + ')(:(?:[^\\s"]+|"[^"]*"))|("(?:[^"\\\\]|\\\\.)*")',
+            'g'
+        );
+
+        let match;
+        while ((match = tokenPattern.exec(query)) !== null) {
+            // Add text before this match
+            if (match.index > lastIndex) {
+                const before = query.slice(lastIndex, match.index);
+                output += highlightRegex(escapeHtml(before));
+            }
+
+            if (match[1] && match[2]) {
+                // Filter match: group 1 is filter name, group 2 is :value
+                output += '<span class="syntax-filter">' + escapeHtml(match[1]) + '</span>';
+                output += '<span class="syntax-value">' + escapeHtml(match[2]) + '</span>';
+            } else if (match[3]) {
+                // Standalone string match
+                output += '<span class="syntax-string">' + escapeHtml(match[3]) + '</span>';
+            }
+
+            lastIndex = match.index + match[0].length;
+        }
+
+        // Add remaining text
+        if (lastIndex < query.length) {
+            output += highlightRegex(escapeHtml(query.slice(lastIndex)));
+        }
+
+        return output;
+    }
+
+    // Highlight regex special characters in plain text segments
+    function highlightRegex(text) {
+        // Regex special characters to highlight
+        const regexPattern = /([\\[\](){}|^$*+?.])/g;
+        return text.replace(regexPattern, '<span class="syntax-regex">$1</span>');
+    }
+
     $: tagsByCategory = getTagsByCategory(result.tags);
 </script>
 
@@ -51,7 +113,7 @@
                 <div class="mt-4">
                     <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-2">Search Query</h4>
                     <div class="code-block">
-                        <code>{result.syntax}</code>
+                        <code>{@html highlightQuery(result.syntax)}</code>
                     </div>
                 </div>
 
