@@ -59,4 +59,8 @@ You can preview the production build with `npm run preview`.
 
 ## Deploying
 
-As a GitHub pages site, the production deployment serves the assets in the `/docs/` folder of the `main` branch of this repo. The build is configured to rewrite the `/docs/` folder. If a new build is committed and merged to the `main` branch, but the github pages site is not updating, it is likely due to a caching issue with GitHub pages.
+Deployments are automated via GitHub Actions. When changes are pushed to the `main` branch, the workflow in `.github/workflows/deploy.yml` builds the site and deploys it to GitHub Pages.
+
+The `docs/` folder is no longer tracked in version control—it's generated during CI and deployed automatically.
+
+> **Note:** The repository must have Settings → Pages → Source set to "GitHub Actions" for auto-deploy to work.
