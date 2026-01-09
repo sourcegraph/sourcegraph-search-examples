@@ -9,3 +9,6 @@ node_modules
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .claude/settings.local.json
+
+# Build output (deployed via GitHub Actions)
+/docs
