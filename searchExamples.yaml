@@ -199,3 +199,10 @@
   tags:
   - pattern_type:literal
   - use_case:code_health
+- name: Expose .env files in repositories
+  description: Find .env files that may have been accidentally committed to repositories, potentially exposing secrets and configuration.
+  syntax: file:^\.env$
+  exampleLink: https://sourcegraph.com/search?q=context:global+file:%5E%5C.env%24&patternType=regexp&sm=1&groupBy=repo
+  tags:
+  - pattern_type:regexp
+  - use_case:security
